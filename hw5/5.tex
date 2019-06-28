@@ -335,11 +335,11 @@ So,
 \vspace{0.618 em}
 $\blacksquare$
 
-
+\newpage
 \paragraph{5} Which positive integers have an odd number of positive
 divisors? Explain why.
 
-The squares. No clue. I just wrote this in python:
+The squares. Because:
 
 \begin{verbatim}
 def divisors (x):
@@ -358,6 +358,24 @@ len(divisors(x)) >= 1]
     9025,9216,9409,9604,9801]
 
 \end{verbatim}
+
+And $\tau(n) = \tau(p_1^{m_1}\cdots p_k^{m_k}) = (m_1+1)\cdots(m_k+1)$
+counts the number of divisors of $n$, where the prime decomposition of
+$n = p_1^{m_1}\cdots p_k^{m_k}$.
+
+Suppose all the powers are even, then all the factors of the
+evaluation of $\tau$ at $n$ are odd---i.e. $(m_i +1) = (2k_i +1)$ for
+some $k1,...k_k\in\mathbb{Z}.$ So $\tau(n)$ is odd. So the number of
+divisors of $n$ is odd if $n$ is a square.
+
+Suppose there is a power $m_j$, that is odd, there exist a factor in the
+evaluation of $\tau$ at $n$ is even---i.e. $(m_j +1) = (2l + 1 +1) =
+(2l+2) = 2(l+1)$ for
+some $l \in\mathbb{Z}.$ So $\tau(n)$ is even, because it has at least
+one even term. So, this proves the only numbers that have an odd
+number of divisors are squares.
+
+
 
 
 
